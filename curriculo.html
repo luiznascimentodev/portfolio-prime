@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Luiz Nascimento | Desenvolvedor Fullstack</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container px-5">
+                <a class="navbar-brand d-block text-center text-lg-start" href="index.html"><span
+                        class="fw-bolder text-primary" id="typing-effect"></span></a>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const text = "Conheça minha carreira";
+                        const typingElement = document.getElementById("typing-effect-2");
+                        let index = 0;
+
+                        function type() {
+                            if (index < text.length) {
+                                typingElement.textContent += text.charAt(index);
+                                index++;
+                                setTimeout(type, 100);
+                            }
+                        }
+
+                        type();
+                    });
+                </script>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="curriculo.html">Currículo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projetos.html">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    </ul>
+                    <div class="trilho" id="trilho" onclick="toggleDarkMode()">
+                        <div class="indicador" id="indicador"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main-content" class="flex-shrink-0">
+        <section id="resume" class="container px-3 px-md-5 my-4 my-md-5">
+            <div class="text-center mb-4 mb-md-5">
+                <h1 class="display-6 fw-bolder mb-0"><span class="text-gradient d-inline">Currículo</span></h1>
+            </div>
+            <div class="row gx-3 gx-md-5 justify-content-center">
+                <div class="col-lg-11 col-xl-9 col-xxl-8">
+                    <!-- Experience Section -->
+                    <section>
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-between mb-3 mb-md-4 gap-3">
+                            <h2 class="text-primary fw-bolder mb-2 mb-md-0 me-md-3">Experiências</h2>
+                            <a href="assets/luiz-nascimento-desenvolvedor-fullstack.pdf"
+                                class="btn btn-primary px-3 py-2" style="border-radius: 4px;" download>
+                                <i class="bi bi-download me-1"></i> Baixar Currículo
+                            </a>
+                        </div>
+                        <!-- Experience Card 1 -->
+                        <div class="card shadow border-0 rounded-4 mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="row align-items-center gx-3 gx-md-5">
+                                    <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="bg-light p-3 p-md-4 rounded-4">
+                                            <div class="fw-bolder text-secondary fw-bold mb-2">2015 - 2018</div>
+                                            <div class="small fw-bolder">Desenvolvedor Web (WordPress)</div>
+                                            <div class="small text-muted">Agência Própria</div>
+                                            <div class="small text-muted">São Paulo, SP</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <ul class="list-unstyled mb-0">
+                                            <li><strong>Desenvolvimento de sites WordPress:</strong> Foco no setor da
+                                                construção civil, com ênfase em SEO e geração de leads.</li>
+                                            <li><strong>Criação de layouts responsivos:</strong> Desenvolvimento de
+                                                interfaces modernas e funcionalidades customizadas utilizando HTML, CSS
+                                                e PHP.</li>
+                                            <li><strong>Gerenciamento de projetos:</strong> Instalação, configuração e
+                                                manutenção de sites WordPress.</li>
+                                            <li><strong>SEO on-page:</strong> Implementação de estratégias para
+                                                otimização de mecanismos de busca e integração de formulários para
+                                                captação de leads.</li>
+                                            <li><strong>Colaboração em equipe:</strong> Trabalho conjunto com designers
+                                                e desenvolvedores para garantir entregas alinhadas e de alta qualidade.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Card 2 -->
+                        <div class="card shadow border-0 rounded-4 mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="row align-items-center gx-3 gx-md-5">
+                                    <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="bg-light p-3 p-md-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2017 - 2020</div>
+                                            <div class="small fw-bolder">Gerente Comercial</div>
+                                            <div class="small text-muted">Asus</div>
+                                            <div class="small text-muted">São Paulo, SP</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <ul class="list-unstyled mb-0">
+                                            <li><strong>Gestão de equipe:</strong> Liderança de uma equipe de 5 pessoas,
+                                                promovendo um ambiente colaborativo e garantindo a entrega de resultados
+                                                de alta qualidade.</li>
+                                            <li><strong>Atendimento ao cliente:</strong> Desenvolvimento de habilidades
+                                                interpessoais e resolução de problemas para oferecer soluções
+                                                personalizadas.</li>
+                                            <li><strong>Vendas de produtos e serviços de tecnologia:</strong>
+                                                Conhecimento técnico aplicado para identificar necessidades e propor
+                                                soluções adequadas.</li>
+                                            <li><strong>Gestão de metas:</strong> Trabalho orientado a resultados, com
+                                                foco em alcançar e superar objetivos estabelecidos.</li>
+                                            <li><strong>Colaboração em equipe:</strong> Experiência em trabalhar com
+                                                equipes multidisciplinares para garantir a satisfação do cliente e o
+                                                sucesso do projeto.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Card 3 -->
+                        <div class="card shadow border-0 rounded-4 mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="row align-items-center gx-3 gx-md-5">
+                                    <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="bg-light p-3 p-md-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2024 - 2025</div>
+                                            <div class="small fw-bolder">Consultor de Negócios</div>
+                                            <div class="small text-muted">Vivo</div>
+                                            <div class="small text-muted">Curitiba, PR</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <ul class="list-unstyled mb-0">
+                                            <li><strong>Atendimento ao cliente:</strong> Atendimento personalizado em
+                                                loja física, identificando as necessidades dos clientes e oferecendo
+                                                soluções adequadas para planos de telefonia e dispositivos móveis.</li>
+                                            <li><strong>Habilidades de comunicação:</strong> Desenvolvimento de
+                                                habilidades interpessoais para criar conexões significativas com os
+                                                clientes e garantir uma experiência positiva.</li>
+                                            <li><strong>Resolução de problemas:</strong> Capacidade de lidar com
+                                                situações desafiadoras, oferecendo soluções rápidas e eficazes para
+                                                atender às expectativas dos clientes.</li>
+                                            <li><strong>Vendas consultivas:</strong> Aplicação de técnicas de vendas
+                                                para apresentar produtos e serviços de forma clara e persuasiva,
+                                                resultando em aumento de conversões.</li>
+                                            <li><strong>Trabalho em equipe:</strong> Colaboração com colegas para
+                                                alcançar metas de vendas e melhorar continuamente os processos internos.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Education Section -->
+                    <section>
+                        <h2 class="text-secondary fw-bolder mb-3 mb-md-4">Educação</h2>
+                        <!-- Education Card 1 -->
+                        <div class="card shadow border-0 rounded-4 mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="row align-items-center gx-3 gx-md-5">
+                                    <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="bg-light p-3 p-md-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2024 - 2026 (Cursando)</div>
+                                            <div class="small fw-bolder">Universidade Positivo</div>
+                                            <div class="small text-muted">Curitiba, PR</div>
+                                            <div class="fst-italic">
+                                                <div class="small text-muted">Tecnólogo</div>
+                                                <div class="small text-muted">Análise e Desenvolvimento de Sistemas
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <p class="mb-3">O curso de Análise e Desenvolvimento de Sistemas da Universidade
+                                            Positivo, em Curitiba, oferece uma formação prática e alinhada ao mercado de
+                                            tecnologia. Com foco em programação, banco de dados, desenvolvimento de
+                                            software e gestão de projetos, os alunos desenvolvem habilidades essenciais
+                                            para o setor de TI.</p>
+                                        <p>Destaques do curso incluem:</p>
+                                        <ul class="mb-0">
+                                            <li><strong>Laboratórios modernos:</strong> Equipados para práticas reais e
+                                                aprendizado hands-on.</li>
+                                            <li><strong>Metodologias ágeis:</strong> Preparação para trabalhar com Scrum
+                                                e outras práticas modernas de gestão de projetos.</li>
+                                            <li><strong>Tecnologias emergentes:</strong> Ênfase em inteligência
+                                                artificial, desenvolvimento mobile e outras tendências do mercado.</li>
+                                            <li><strong>Networking:</strong> Parcerias com empresas, eventos e workshops
+                                                que conectam alunos ao mercado.</li>
+                                        </ul>
+                                        <p><strong>Habilidades transferíveis:</strong> Resolução de problemas, trabalho
+                                            em equipe, pensamento crítico e adaptabilidade, essenciais para qualquer
+                                            área profissional.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Education Card 2 -->
+                        <div class="card shadow border-0 rounded-4 mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="row align-items-center gx-3 gx-md-5">
+                                    <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="bg-light p-3 p-md-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">2024 - 2025</div>
+                                            <div class="small fw-bolder">DevClub</div>
+                                            <div class="small text-muted">Online</div>
+                                            <div class="fst-italic">
+                                                <div class="small text-muted">Curso Técnico</div>
+                                                <div class="small text-muted">Desenvolvimento Web Fullstack</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <p class="mb-3">O curso de Desenvolvimento Web Fullstack do DevClub oferece uma
+                                            formação prática e completa, focada em tecnologias modernas como HTML, CSS,
+                                            JavaScript, Node.js e React.</p>
+                                        <p class="mb-3">Destaques incluem:</p>
+                                        <ul class="mb-0">
+                                            <li><strong>Projetos reais:</strong> Simulação de desafios do mercado.</li>
+                                            <li><strong>Stack atualizada:</strong> Tecnologias alinhadas às demandas
+                                                atuais.</li>
+                                            <li><strong>Mentoria especializada:</strong> Suporte de profissionais
+                                                experientes.</li>
+                                            <li><strong>Comunidade ativa:</strong> Networking e colaboração entre
+                                                alunos.</li>
+                                        </ul>
+                                        <p class="mb-0">O curso desenvolve habilidades técnicas e interpessoais,
+                                            preparando os alunos para o mercado de trabalho com uma abordagem prática e
+                                            estratégica.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Skills Section -->
+                    <section>
+                        <div class="card shadow border-0 rounded-4 mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature bg-primary text-white rounded-3 me-3"><i
+                                                class="bi bi-tools"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Habilidades
+                                                Profissionais</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                Comunicação</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Gestão
+                                                de Projetos</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                Pensamento Crítico</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                Adaptabilidade</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                Inteligência Emocional</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                Resolução de Conflitos</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                Liderança</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Trabalho
+                                                em Equipe</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Tomada
+                                                de Decisão</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature bg-primary text-white rounded-3 me-3"><i
+                                                class="bi bi-code-slash"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Linguagens e
+                                                Tecnologias</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">
+                                                JavaScript</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Node.JS
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Vue.JS
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Mysql
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">PHP
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JAVA
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Laravel
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer id="main-footer" class="py-3 mt-auto">
+        <div class="d-flex justify-content-center fs-2 gap-4">
+            <a class="text-gradient" href="https://wa.me/+5541984821206" target="_blank"
+                style="transition: transform 0.3s, color 0.3s;"
+                onmouseover="this.style.transform='scale(1.2)'; this.style.color='#25D366';"
+                onmouseout="this.style.transform='scale(1)'; this.style.color='';"><i class="bi bi-whatsapp"></i></a>
+            <a class="text-gradient" href="https://www.linkedin.com/in/luiz-felippe-nascimento" target="_blank"
+                style="transition: transform 0.3s, color 0.3s;"
+                onmouseover="this.style.transform='scale(1.2)'; this.style.color='#0077B5';"
+                onmouseout="this.style.transform='scale(1)'; this.style.color='';"><i class="bi bi-linkedin"></i></a>
+            <a class="text-gradient" href="https://github.com/luiznascimentodev" target="_blank"
+                style="transition: transform 0.3s, color 0.3s;"
+                onmouseover="this.style.transform='scale(1.2)'; this.style.color='#333';"
+                onmouseout="this.style.transform='scale(1)'; this.style.color='';"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="container px-3 px-md-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto text-primary">
+                    <div class="small m-0">Copyright &copy; Luiz Nascimento | Desenvolvedor Web Fullstack</div>
+                </div>
+                <div class="col-auto"></div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="./js/scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.from(".navbar", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
+            gsap.from("h1.display-5", { duration: 1, y: 50, opacity: 0, ease: "power2.out", delay: 0.5 });
+            gsap.from(".card", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                stagger: 0.3,
+                ease: "power2.out",
+                delay: 0.7,
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
