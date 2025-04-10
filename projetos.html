@@ -16,21 +16,24 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Projetos | Luiz Nascimento - Desenvolvedor Web Fullstack" />
     <meta name="twitter:description" content="Veja os projetos de destaque desenvolvidos por Luiz Nascimento, incluindo soluções otimizadas para SEO e design responsivo." />
-    <meta name="twitter:image" content="https://luiznascimentodev.github.io/assets/preview-obelico.webp" />
+    <meta name="twitter:image" content="https://luiznascimentodev.github.io/assets/preview-obelico.png" />
     <title>Projetos | Luiz Nascimento - Desenvolvedor Web Fullstack</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Custom Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" as="style" />
+    <link rel="preload" href="/assets/preview-obelico.webp" as="image" type="image/webp" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    </noscript>
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -64,8 +67,8 @@
             <div class="container px-5 mb-5">
                 <div class="text-center mb-5">
                     <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projetos</span></h1>
-                    <p class="lead text-muted">Descubra os projetos desenvolvidos com foco em inovação, performance e design responsivo.</p>
-                </div>
+                    <p class="lead text-muted" style="opacity: 0; transform: translateX(100px);" id="animated-text">Descubra os projetos desenvolvidos com foco em inovação, performance e design responsivo.</p>
+                                    </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
                         <!-- Project Card 1-->
@@ -115,9 +118,10 @@
                                             <br>
                                         </div>
 
-                                        <img class="img-fluid w-100 h-auto" src="/assets/preview-obelico.webp"
-                                            alt="Preview do projeto Agência OBelico - Site moderno e otimizado para SEO"
-                                            style="object-fit: contain; max-height: 400px;" />
+                                        <img class="img-fluid w-100 h-auto" 
+                                            src="/assets/preview-obelico.webp" 
+                                            alt="Preview do projeto Agência OBelico - Site moderno e otimizado para SEO" 
+                                            width="800" height="400" loading="lazy" />
                                     </div>
                                 </div>
                             </div>
@@ -166,9 +170,9 @@
         </div>
     </footer>
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.from(".navbar", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });

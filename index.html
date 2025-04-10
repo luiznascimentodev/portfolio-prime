@@ -16,15 +16,19 @@
     <!-- Custom Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" as="style" />
+    <link rel="preload" href="assets/avatar-img.webp" as="image" type="image/webp" />
+    <link rel="preload" href="assets/luiz-nascimento-desenvolvedor-fullstack.pdf" as="document" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    </noscript>
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -90,7 +94,8 @@
                                 <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                 <!-- Watch a tutorial on how to do this on YouTube (link)-->
                                 <img class="profile-img border border-primary border-3 rounded-circle shadow-lg"
-                                    src="assets/avatar-img.webp" alt="Foto de perfil de Luiz Nascimento, Desenvolvedor Web Fullstack" />
+                                    src="assets/avatar-img.webp" alt="Foto de perfil de Luiz Nascimento, Desenvolvedor Web Fullstack" 
+                                    width="580" height="500" loading="lazy" />
                                 <div class="dots-1">
                                     <!-- SVG Dots-->
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -432,14 +437,23 @@
     </footer>
 
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             gsap.from(".navbar", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
             gsap.from(".badge", { duration: 1, scale: 0, opacity: 0, ease: "back.out(1.7)", delay: 0.5 });
             gsap.from(".text-xxl-start", { duration: 1, x: -100, opacity: 0, ease: "power2.out", delay: 0.7 });
+            gsap.from(".profile-img", { duration: 1.5, opacity: 0, scale: 0.8, ease: "power2.out", delay: 1 });
+            gsap.from(".dots-1 svg, .dots-2 svg, .dots-3 svg, .dots-4 svg", { 
+                duration: 1.5, 
+                opacity: 0, 
+                scale: 0.8, 
+                ease: "power2.out", 
+                delay: 1.2, 
+                stagger: 0.2 
+            });
         });
     </script>
 </body>
