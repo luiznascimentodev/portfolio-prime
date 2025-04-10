@@ -1,7 +1,5 @@
 # Portfolio Prime
 
-![Portfolio Screenshot](./public/preview.png)
-
 Este é o repositório do meu portfólio pessoal desenvolvido com **HTML**, **CSS** e **JavaScript**. O objetivo principal é apresentar meus projetos, habilidades e trajetória profissional de forma clara, responsiva e moderna.
 
 🔗 **Acesse o site em produção:** [https://luiznascimento.dev.br/](https://luiznascimento.dev.br/)
