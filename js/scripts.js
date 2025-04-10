@@ -19,7 +19,7 @@ if (!typingEffect) {
 			}, 50);
 
 			index++;
-			setTimeout(type, 180); // Adjust typing speed
+			setTimeout(type, 130); // Adjust typing speed
 		} else {
 			blinkCursor();
 		}
