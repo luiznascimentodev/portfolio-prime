@@ -34,6 +34,15 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HFDCNW6TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5HFDCNW6TM');
+    </script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -118,9 +127,9 @@
                                             <br>
                                         </div>
 
-                                        <img class="img-fluid w-100 h-auto" 
-                                            src="/assets/preview-obelico.webp" 
-                                            alt="Preview do projeto Agência OBelico - Site moderno e otimizado para SEO" 
+                                        <img class="img-fluid w-100 h-auto"
+                                            src="/assets/preview-obelico.webp"
+                                            alt="Preview do projeto Agência OBelico - Site moderno e otimizado para SEO"
                                             width="800" height="400" loading="lazy" />
                                     </div>
                                 </div>
@@ -187,6 +196,30 @@
             });
         });
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const typingEffects = [
+      { id: "typing-effect", text: "Conheça meus códigos!" }
+    ];
+
+    typingEffects.forEach(({ id, text }) => {
+      const element = document.getElementById(id);
+      if (element) {
+        let index = 0;
+        function typeText() {
+          if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, 100);
+          }
+        }
+        typeText();
+      } else {
+        console.error(`Elemento com ID '${id}' não encontrado.`);
+      }
+    });
+  });
+</script>
 </body>
 
 </html>

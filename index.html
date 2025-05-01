@@ -8,7 +8,7 @@
     <meta name="author" content="Luiz Nascimento" />
     <meta name="keywords" content="Desenvolvedor Fullstack, Portfólio, Desenvolvimento Web, Luiz Nascimento, Programação, Projetos Web" />
     <meta name="robots" content="index, follow" />
-    
+
     <!-- CSS crítico inline para acelerar a renderização inicial -->
     <style>
       /* CSS crítico para a renderização inicial */
@@ -17,55 +17,65 @@
         contain: layout paint; /* Otimiza composição */
         will-change: opacity; /* Prepara o navegador para animações */
       }
-      
+
       .text-gradient {
         background: linear-gradient(45deg, #1e30f3, #10B981);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      
+
       .navbar, .profile, .badge {
         opacity: 1 !important; /* Evita animação inicial que atrasa o LCP */
       }
     </style>
-    
+
     <title>Luiz Nascimento | Portfólio de Desenvolvedor Web Fullstack</title>
-    
+
     <!-- Preload da imagem principal (LCP) -->
     <link rel="preload" as="image" href="assets/avatar-img.webp" fetchpriority="high" />
-    
+
     <!-- Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
-    
+
     <!-- Conexões antecipadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    
+
     <!-- Custom Google font com carregamento otimizado -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" as="style" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" media="print" onload="this.media='all'" />
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
     </noscript>
-    
+
     <!-- Bootstrap icons com carregamento não bloqueante -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    
+
     <!-- Core CSS com carregamento não bloqueante -->
     <link href="css/styles.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    
+
     <!-- GSAP com carregamento assíncrono -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" async></script>
-    
+
     <!-- Script para substituir fontes renderizadas -->
     <script>
       // Detecta quando a fonte estiver carregada para eliminação do FOUT
       document.fonts.ready.then(() => {
         document.documentElement.classList.add('fonts-loaded');
       });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HFDCNW6TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5HFDCNW6TM');
     </script>
 </head>
 
@@ -74,9 +84,8 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg py-3">
             <div class="container px-5">
-                <a class="navbar-brand fw-bold" href="index.html">
-                    <span class="text-contrast" id="navbar-typing-effect"></span>
-                </a>
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary"
+                        id="navbar-typing-effect"></span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span
@@ -119,7 +128,7 @@
                             <div
                                 class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
-                                    href="assets/luiz-nascimento-desenvolvedor-fullstack.pdf" 
+                                    href="assets/luiz-nascimento-desenvolvedor-fullstack.pdf"
                                     title="Baixar o currículo de Luiz Nascimento">Currículo</a>
                                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
                                     href="https://github.com/luiznascimentodev">GitHub</a>
@@ -131,12 +140,12 @@
                         <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                             <div class="profile">
                                 <img class="profile-img img-fluid border border-primary border-3 rounded-circle shadow-lg"
-                                    src="assets/avatar-img.webp" 
-                                    alt="Foto de perfil de Luiz Nascimento, Desenvolvedor Web Fullstack" 
-                                    width="700" height="500" 
+                                    src="assets/avatar-img.webp"
+                                    alt="Foto de perfil de Luiz Nascimento, Desenvolvedor Web Fullstack"
                                     fetchpriority="high"
                                     decoding="async"
-                                    loading="eager" />
+                                    loading="eager"
+                                    style="width: 500px; height: 500px; object-fit: cover;" />
                                 <div class="dots-1">
                                     <!-- SVG Dots-->
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -435,44 +444,27 @@
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
                             <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Sobre Mim</span></h2>
-                            <p class="lead mb-4 fw-semibold text-contrast">
-                                Meu nome é Luiz Nascimento! Sou Desenvolvedor Web Fullstack
+                            <p class="lead mb-4 text-primary">Meu nome é Luiz Nascimento! Sou Desenvolvedor Web
+                                Fullstack
                             </p>
                             <p class="text-muted">Desenvolvedor Web Fullstack especializado em criar soluções digitais
                                 inovadoras, criativas e otimizadas, atendendo às necessidades do seu negócio.</p>
                             <div class="d-flex justify-content-center fs-2 gap-4">
-                                <a class="text-gradient" 
-                                   href="https://wa.me/+5541984821206" 
-                                   target="_blank"
-                                   aria-label="Entre em contato pelo WhatsApp"
-                                   style="transition: transform 0.3s, color 0.3s;" 
-                                   onmouseover="this.style.transform='scale(1.2)'; this.style.color='#25D366';" 
-                                   onmouseout="this.style.transform='scale(1)'; this.style.color='';">
-                                    <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                                    <span class="visually-hidden">WhatsApp</span>
-                                </a>
-                                
-                                <a class="text-gradient" 
-                                   href="https://www.linkedin.com/in/luiz-felippe-nascimento" 
-                                   target="_blank"
-                                   aria-label="Visite meu perfil no LinkedIn"
-                                   style="transition: transform 0.3s, color 0.3s;" 
-                                   onmouseover="this.style.transform='scale(1.2)'; this.style.color='#0077B5';" 
-                                   onmouseout="this.style.transform='scale(1)'; this.style.color='';">
-                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                    <span class="visually-hidden">LinkedIn</span>
-                                </a>
-                                
-                                <a class="text-gradient" 
-                                   href="https://github.com/luiznascimentodev" 
-                                   target="_blank"
-                                   aria-label="Veja meus projetos no GitHub"
-                                   style="transition: transform 0.3s, color 0.3s;" 
-                                   onmouseover="this.style.transform='scale(1.2)'; this.style.color='#333';" 
-                                   onmouseout="this.style.transform='scale(1)'; this.style.color='';">
-                                    <i class="bi bi-github" aria-hidden="true"></i>
-                                    <span class="visually-hidden">GitHub</span>
-                                </a>
+                                <a class="text-gradient" href="https://wa.me/+5541984821206" target="_blank"
+                                    style="transition: transform 0.3s, color 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.2)'; this.style.color='#25D366';"
+                                    onmouseout="this.style.transform='scale(1)'; this.style.color='';"><i
+                                        class="bi bi-whatsapp"></i></a>
+                                <a class="text-gradient" href="https://www.linkedin.com/in/luiz-felippe-nascimento"
+                                    target="_blank" style="transition: transform 0.3s, color 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.2)'; this.style.color='#0077B5';"
+                                    onmouseout="this.style.transform='scale(1)'; this.style.color='';"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a class="text-gradient" href="https://github.com/luiznascimentodev" target="_blank"
+                                    style="transition: transform 0.3s, color 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.2)'; this.style.color='#333';"
+                                    onmouseout="this.style.transform='scale(1)'; this.style.color='';"><i
+                                        class="bi bi-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -481,40 +473,65 @@
         </section>
     </main>
 
-    <footer id="main-footer" class="py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-center flex-column">
+    <footer id="main-footer" class=" py-4 mt-auto">
+        <!-- Footer -->
+        <div class="container px-5" style="text-align: center;">
+            <div class="row align-items-center justify-content-center flex-column" style="text-align: center;">
                 <div class="col-auto">
-                    <div class="fw-medium text-contrast text-center">
-                        Copyright © Luiz Nascimento | Desenvolvedor Web Fullstack
+                    <div class="small m-0 text-primary" style="text-align: center;">
+                        Copyright &copy; Luiz Nascimento | Desenvolvedor Web Fullstack
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Carregar apenas scripts essenciais -->
-    <script type="module">
-        // Carrega o GSAP apenas quando necessário
-        const loadGSAP = async () => {
-            const { gsap } = await import('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js');
-            return gsap;
-        };
-
-        // Carregar animações após o conteúdo principal
-        document.addEventListener('DOMContentLoaded', async () => {
-            const isDesktop = window.innerWidth >= 992;
-            if (isDesktop) {
-                const gsap = await loadGSAP();
-                // ...suas animações GSAP aqui...
-            }
-        });
+    <!-- Scripts otimizados -->
+    <script>
+      // Inicializa GSAP somente após a renderização inicial
+      window.addEventListener('load', function() {
+        // Verifica se GSAP está carregado
+        if (window.gsap) {
+          // Configuração das animações pós-renderização
+          gsap.from(".navbar", { duration: 1, y: -50, opacity: 0, ease: "power2.out", delay: 0.3 });
+          // ...other animations
+        } else {
+          // Fallback caso GSAP não esteja carregado
+          document.querySelectorAll(".navbar, .badge, .text-xxl-start, .profile-img").forEach(el => {
+            el.style.opacity = 1;
+          });
+        }
+      });
     </script>
 
-    <!-- Bootstrap customizado -->
-    <script type="module" src="js/bootstrap-custom.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const typingEffects = [
+          { id: "typing-effect", text: "Dando Vida as suas Ideias com tecnologia!" },
+          { id: "navbar-typing-effect", text: "Olá, Seja Bem-Vindo!" }
+        ];
 
-    <!-- Scripts principais com defer -->
+        typingEffects.forEach(({ id, text }) => {
+          const element = document.getElementById(id);
+          if (element) {
+            let index = 0;
+            function typeText() {
+              if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50);
+              }
+            }
+            typeText();
+          } else {
+            console.error(`Elemento com ID '${id}' não encontrado.`);
+          }
+        });
+      });
+    </script>
+
+    <!-- Bootstrap e scripts principais carregados com defer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="js/scripts.js" defer></script>
 </body>
 

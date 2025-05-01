@@ -1,63 +1,62 @@
-// Carregar módulos do Bootstrap sob demanda
-const loadBootstrapModule = async (module) => {
-    try {
-        const component = await import(`bootstrap/js/dist/${module}`);
-        return component.default;
-    } catch (error) {
-        console.warn(`Failed to load ${module}:`, error);
-        return null;
+// Corrigir o efeito de digitação para garantir que o elemento seja encontrado e o texto seja exibido corretamente
+const text = "Transformando ideias em soluções digitais";
+let index = 0;
+
+function startTypingEffect() {
+    const typingEffect = document.getElementById("typing-effect");
+    if (!typingEffect) {
+        console.error('Elemento com ID "typing-effect" não encontrado. Verifique se o ID está correto no HTML.');
+        return;
     }
-};
 
-// Inicialização básica
-document.addEventListener('DOMContentLoaded', () => {
-    // Efeito de digitação (mantido por ser crítico para UX)
-    const typingEffect = (text, element, speed = 130) => {
-        let index = 0;
-        
-        const type = () => {
-            if (index < text.length) {
-                element.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, speed);
-            }
-        };
-        
-        type();
-    };
-
-    // Inicializar apenas funcionalidades essenciais
-    const init = async () => {
-        // Carregar Collapse apenas se necessário para o menu mobile
-        if (document.querySelector('.navbar-collapse')) {
-            const Collapse = await loadBootstrapModule('collapse');
-            if (Collapse) {
-                document.querySelectorAll('.navbar-collapse').forEach(el => new Collapse(el));
-            }
+    function type() {
+        if (index < text.length) {
+            typingEffect.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 90);
+        } else {
+            blinkCursor();
         }
+    }
 
-        // Iniciar efeito de digitação se elemento existir
-        const typingElement = document.getElementById('typing-effect');
-        if (typingElement) {
-            typingEffect('Transformando ideias em soluções digitais', typingElement);
-        }
-    };
+    function blinkCursor() {
+        let blinkCount = 0;
+        const interval = setInterval(() => {
+            if (typingEffect.textContent.endsWith("|")) {
+                typingEffect.textContent = typingEffect.textContent.slice(0, -1);
+            } else {
+                typingEffect.textContent += "|";
+            }
 
-    init();
-});
+            blinkCount++;
+            if (blinkCount >= 6) {
+                clearInterval(interval);
+                typingEffect.textContent = text; // Remove o cursor após o piscar
+            }
+        }, 500);
+    }
 
-// Carregar módulos adicionais conforme interação do usuário
-document.addEventListener('click', async (e) => {
-    // Carregar modal apenas quando necessário
-    if (e.target.dataset.bsToggle === 'modal') {
-        const Modal = await loadBootstrapModule('modal');
-        if (Modal) {
-            const modalId = e.target.dataset.bsTarget;
-            const modalElement = document.querySelector(modalId);
-            new Modal(modalElement);
+    type();
+}
+
+// Monitorando o LCP antes de iniciar animações pesadas
+const observer = new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+        if (entry.entryType === 'largest-contentful-paint') {
+            // LCP concluído, podemos iniciar animações
+            startTypingEffect();
+            observer.disconnect();
         }
     }
 });
+
+// Registrar observador para LCP
+if (PerformanceObserver.supportedEntryTypes.includes('largest-contentful-paint')) {
+    observer.observe({ entryTypes: ['largest-contentful-paint'] });
+} else {
+    // Fallback para navegadores que não suportam PerformanceObserver
+    window.addEventListener('load', startTypingEffect);
+}
 
 // Restante das funções com leve atraso para priorizar renderização
 window.addEventListener('load', () => {
@@ -94,16 +93,16 @@ function setupPageSpecificAnimations() {
                 setTimeout(typeNavbarText, 90);
             }
         }
-        
+
         typeNavbarText();
     }
-    
+
     // Botão "Mostrar Mais" - adicionado após renderização principal
     const showMoreBtn = document.getElementById("show-more-btn");
     if (showMoreBtn) {
         showMoreBtn.addEventListener("click", function() {
             const moreText = document.getElementById("more-text");
-            
+
             if (moreText.style.display === "none") {
                 moreText.style.display = "block";
                 this.textContent = "Mostrar Menos";
@@ -113,7 +112,7 @@ function setupPageSpecificAnimations() {
             }
         });
     }
-    
+
     // Animação para texto animado
     const animatedText = document.getElementById("animated-text");
     if (animatedText && window.gsap) {
@@ -131,25 +130,25 @@ function setupPageSpecificAnimations() {
 function initializeDarkModeToggle() {
     const trilho = document.getElementById("trilho");
     const body = document.querySelector("body");
-    
+
     if (trilho) {
         const isDarkMode = localStorage.getItem("darkMode") === "true";
         if (isDarkMode) {
             trilho.classList.add("dark");
             body.classList.add("dark");
         }
-        
+
         trilho.addEventListener("click", () => {
             trilho.classList.toggle("dark");
             body.classList.toggle("dark");
-            
+
             const darkModeEnabled = body.classList.contains("dark");
             localStorage.setItem("darkMode", darkModeEnabled);
-            
+
             const darkModeEvent = new CustomEvent("darkModeToggle", {
                 detail: { darkModeEnabled }
             });
-            
+
             window.dispatchEvent(darkModeEvent);
         });
     } else {

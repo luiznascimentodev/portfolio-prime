@@ -24,6 +24,15 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HFDCNW6TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5HFDCNW6TM');
+    </script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -33,20 +42,27 @@
                 <a class="navbar-brand d-block text-center text-lg-start" href="index.html"><span
                         class="fw-bolder text-primary" id="typing-effect"></span></a>
                 <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        const text = "Conheça minha carreira";
-                        const typingElement = document.getElementById("typing-effect-2");
-                        let index = 0;
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const typingEffects = [
+                            { id: "typing-effect", text: "Conheça minha carreira!" }
+                        ];
 
-                        function type() {
-                            if (index < text.length) {
-                                typingElement.textContent += text.charAt(index);
-                                index++;
-                                setTimeout(type, 100);
+                        typingEffects.forEach(({ id, text }) => {
+                            const element = document.getElementById(id);
+                            if (element) {
+                                let index = 0;
+                                function typeText() {
+                                    if (index < text.length) {
+                                        element.textContent += text.charAt(index);
+                                        index++;
+                                        setTimeout(typeText, 100);
+                                    }
+                                }
+                                typeText();
+                            } else {
+                                console.error(`Elemento com ID '${id}' não encontrado.`);
                             }
-                        }
-
-                        type();
+                        });
                     });
                 </script>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -84,7 +100,7 @@
                                 <i class="bi bi-download me-1"></i> Baixar Currículo
                             </a>
                             <h2 class="text-primary fw-bolder mb-2 mb-md-0 me-md-3">Experiências</h2>
-                            
+
                         </div>
                         <!-- Experience Card 1 -->
                         <div class="card shadow border-0 rounded-4 mb-4">

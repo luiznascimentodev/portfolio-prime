@@ -27,6 +27,15 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HFDCNW6TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5HFDCNW6TM');
+    </script>
 </head>
 
 <body class="d-flex flex-column">
@@ -65,13 +74,13 @@
                                 class="bi bi-envelope"></i></div>
                         <h1 class="fw-bolder animate-slide-in">Entre em contato</h1>
                         <p class="lead fw-normal text-muted mb-0 animate-slide-in">Vamos trabalhar juntos!</p>
-                        
+
                     </div>
                     <div class="row gx-5 justify-content-center">
 
                         <div  class="d-flex justify-content-center gap-3">
                             <a href="https://wa.me/+5541984821206" target="_blank"
-                                class="btn btn-success btn-lg text-white" id="wpp-btn" 
+                                class="btn btn-success btn-lg text-white" id="wpp-btn"
                                 title="Entre em contato pelo WhatsApp de Luiz Nascimento">
                                 <i class="bi bi-whatsapp"></i> WhatsApp
                             </a>
@@ -84,7 +93,7 @@
                                 <i class="bi bi-github"></i> GitHub
                             </a>
                         </div>
-                        
+
                     </div>
         </section>
     </main>
@@ -122,6 +131,30 @@
             });
         });
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const typingEffects = [
+      { id: "typing-effect", text: "Vamos conversar?" }
+    ];
+
+    typingEffects.forEach(({ id, text }) => {
+      const element = document.getElementById(id);
+      if (element) {
+        let index = 0;
+        function typeText() {
+          if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, 100);
+          }
+        }
+        typeText();
+      } else {
+        console.error(`Elemento com ID '${id}' não encontrado.`);
+      }
+    });
+  });
+</script>
 </body>
 
 </html>
