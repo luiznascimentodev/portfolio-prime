@@ -84,8 +84,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg py-3">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary"
-                        id="navbar-typing-effect"></span></a>
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Olá, Seja Bem-Vindo!</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span
@@ -507,7 +506,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const typingEffects = [
-          { id: "typing-effect", text: "Dando Vida as suas Ideias com tecnologia!" },
+          { id: "typing-effect", text: "Transformando ideias em soluções digitais" },
           { id: "navbar-typing-effect", text: "Olá, Seja Bem-Vindo!" }
         ];
 
@@ -515,11 +514,12 @@
           const element = document.getElementById(id);
           if (element) {
             let index = 0;
+            element.textContent = ""; // Limpa o conteúdo inicial para evitar letras embaralhadas
             function typeText() {
               if (index < text.length) {
                 element.textContent += text.charAt(index);
                 index++;
-                setTimeout(typeText, 50);
+                setTimeout(typeText, 100);
               }
             }
             typeText();

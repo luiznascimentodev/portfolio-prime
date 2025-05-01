@@ -39,32 +39,7 @@
     <header id="main-header">
         <nav class="navbar navbar-expand-lg navbar-light py-3">
             <div class="container px-5">
-                <a class="navbar-brand d-block text-center text-lg-start" href="index.html"><span
-                        class="fw-bolder text-primary" id="typing-effect"></span></a>
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const typingEffects = [
-                            { id: "typing-effect", text: "Conheça minha carreira!" }
-                        ];
-
-                        typingEffects.forEach(({ id, text }) => {
-                            const element = document.getElementById(id);
-                            if (element) {
-                                let index = 0;
-                                function typeText() {
-                                    if (index < text.length) {
-                                        element.textContent += text.charAt(index);
-                                        index++;
-                                        setTimeout(typeText, 100);
-                                    }
-                                }
-                                typeText();
-                            } else {
-                                console.error(`Elemento com ID '${id}' não encontrado.`);
-                            }
-                        });
-                    });
-                </script>
+                <a class="navbar-brand d-block text-center text-lg-start" href="index.html"><span class="fw-bolder text-primary">Conheça minha carreira!</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span

@@ -1,43 +1,4 @@
-// Corrigir o efeito de digitação para garantir que o elemento seja encontrado e o texto seja exibido corretamente
-const text = "Transformando ideias em soluções digitais";
-let index = 0;
 
-function startTypingEffect() {
-    const typingEffect = document.getElementById("typing-effect");
-    if (!typingEffect) {
-        console.error('Elemento com ID "typing-effect" não encontrado. Verifique se o ID está correto no HTML.');
-        return;
-    }
-
-    function type() {
-        if (index < text.length) {
-            typingEffect.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 90);
-        } else {
-            blinkCursor();
-        }
-    }
-
-    function blinkCursor() {
-        let blinkCount = 0;
-        const interval = setInterval(() => {
-            if (typingEffect.textContent.endsWith("|")) {
-                typingEffect.textContent = typingEffect.textContent.slice(0, -1);
-            } else {
-                typingEffect.textContent += "|";
-            }
-
-            blinkCount++;
-            if (blinkCount >= 6) {
-                clearInterval(interval);
-                typingEffect.textContent = text; // Remove o cursor após o piscar
-            }
-        }, 500);
-    }
-
-    type();
-}
 
 // Monitorando o LCP antes de iniciar animações pesadas
 const observer = new PerformanceObserver((entryList) => {
