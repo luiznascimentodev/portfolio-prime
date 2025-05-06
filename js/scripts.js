@@ -1,5 +1,3 @@
-
-
 // Monitorando o LCP antes de iniciar animações pesadas
 const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
@@ -87,16 +85,23 @@ function setupPageSpecificAnimations() {
     }
 }
 
-// Funcionalidade de alternância de tema escuro
+// Atualizar o botão de dark mode para incluir um ícone que sinalize o estado atual
 function initializeDarkModeToggle() {
     const trilho = document.getElementById("trilho");
+    const indicador = document.getElementById("indicador");
     const body = document.querySelector("body");
+    const darkModeIcon = document.createElement("i");
+
+    // Configurar o ícone inicial
+    darkModeIcon.classList.add("bi", "bi-moon"); // Ícone de lua para dark mode
+    indicador.appendChild(darkModeIcon); // Adicionar o ícone dentro do indicador
 
     if (trilho) {
         const isDarkMode = localStorage.getItem("darkMode") === "true";
         if (isDarkMode) {
             trilho.classList.add("dark");
             body.classList.add("dark");
+            darkModeIcon.classList.replace("bi-moon", "bi-sun"); // Ícone de sol para light mode
         }
 
         trilho.addEventListener("click", () => {
@@ -105,6 +110,13 @@ function initializeDarkModeToggle() {
 
             const darkModeEnabled = body.classList.contains("dark");
             localStorage.setItem("darkMode", darkModeEnabled);
+
+            // Atualizar o ícone com base no estado atual
+            if (darkModeEnabled) {
+                darkModeIcon.classList.replace("bi-moon", "bi-sun");
+            } else {
+                darkModeIcon.classList.replace("bi-sun", "bi-moon");
+            }
 
             const darkModeEvent = new CustomEvent("darkModeToggle", {
                 detail: { darkModeEnabled }
